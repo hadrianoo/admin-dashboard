@@ -2,7 +2,7 @@
 
 [![standard-readme compliant](https://img.shields.io/badge/readme%20style-standard-brightgreen.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)
 
-It is admin dashboard panel. Created learning grid module with The Odin Project
+It is admin dashboard panel. Created learning grid with The Odin Project
 
 TODO: Fill out this long description.
 
