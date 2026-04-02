@@ -4,6 +4,9 @@
     --light-grey-color: #e2e8f0;
     --light-blue-color: #1992d4;
     --orange-color: #f0b326;
+    --black: black;
+    --left-to-dashboard: 6rem;
+
 }
 
 @font-face {
@@ -13,8 +16,6 @@
     font-weight: 100 1000;
     font-stretch: 25% 151%;
 }
-
-
 
 body {
     font-family: "Roboto Flex";
@@ -28,6 +29,13 @@ body {
     display: grid;
     grid-template-columns: 24rem 5fr;
     grid-template-rows: 1fr 4fr;
+}
+
+.avatar {
+    background-color: var(--light-blue-color);
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
 }
 
 /* --------------------------sidebar---------------------------------- */
@@ -84,7 +92,6 @@ a>svg {
     height: 2rem;
     place-self: end;
     margin-right: 1rem;
-
 }
 
 
@@ -97,18 +104,30 @@ a>svg {
 
     display: grid;
     grid-template: 2fr 3fr / 3fr 2fr;
+    padding-left: var(--left-to-dashboard);
 }
 
 .search-bar {
     grid-column: 1 / 2;
     grid-row: 1;
     align-self: center;
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 6rem 1fr;
+}
+
+.search-bar>svg {
+    height: 2rem;
+    place-self: start;
+    margin-right: 1rem;
 }
 
 input[type=text] {
     border: none;
     background-color: var(--light-grey-color);
     border-radius: 2rem;
+    justify-self: start;
+    padding: 0.2rem 1rem;
 }
 
 .user {
@@ -117,12 +136,20 @@ input[type=text] {
 
     display: grid;
     grid-template: 2fr 3fr / 1fr;
-
 }
 
 .info {
     display: grid;
     grid-auto-flow: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.info>a>svg {
+    grid-column: 1;
+    fill: var(--black);
+
 }
 
 .greetings {
