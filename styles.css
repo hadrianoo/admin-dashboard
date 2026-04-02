@@ -1,7 +1,3 @@
-* {
-    border: 1px solid green;
-}
-
 :root {
     font-size: 62.5%;
     --white-color: #ffffff;
@@ -10,15 +6,27 @@
     --orange-color: #f0b326;
 }
 
+@font-face {
+    font-family: 'Roboto Flex';
+    src: url('font/RobotoFlex.woff2') format('woff2-variations'),
+        url('font/RobotoFlex.woff2') format('woff2') tech('variations');
+    font-weight: 100 1000;
+    font-stretch: 25% 151%;
+}
+
+
 
 body {
+    font-family: "Roboto Flex";
+    margin: 0;
+    background-color: var(--light-grey-color);
     font-size: 1.6rem;
 }
 
 .container {
     background-color: var(--light-grey-color);
     display: grid;
-    grid-template-columns: 1fr 4fr;
+    grid-template-columns: 24rem 5fr;
     grid-template-rows: 1fr 4fr;
 }
 
@@ -28,19 +36,57 @@ body {
     background-color: var(--light-blue-color);
     grid-row: 1 / 3;
 
+
     display: grid;
-    align-content: start;
-    gap: 1rem;
+    grid-template: 3fr 2fr / 1fr;
 }
 
-.sidebar>h1 {
+.sidebar-wrapper {
+    grid-row: 1;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr repeat(auto-fit, 1rem);
+    gap: 1.5rem;
+}
+
+.sidebar-wrapper>h1 {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 30% 1fr;
+    align-items: center;
+}
+
+h1>svg {
+    fill: var(--white-color);
+    height: 5rem;
+    place-self: end;
+    margin-right: 1rem;
+}
+
+.sidebar-wrapper>h1 {
+    grid-row: 1;
     color: var(--white-color);
 }
 
-.sidebar>a {
+.sidebar-wrapper>a,
+.sidebar-wrapper>div {
+    grid-column: 1;
     color: var(--white-color);
     text-decoration: none;
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 30% 1fr;
 }
+
+a>svg {
+    grid-column: 1;
+    fill: var(--white-color);
+    height: 2rem;
+    place-self: end;
+    margin-right: 1rem;
+
+}
+
 
 /* -------------------------------header---------------------------- */
 
